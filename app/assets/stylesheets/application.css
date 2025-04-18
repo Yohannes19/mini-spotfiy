@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+/* Apply it globally */
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* You can override specific styles here as needed */
+body {
+  font-family: 'Raleway', sans-serif;
+}
+

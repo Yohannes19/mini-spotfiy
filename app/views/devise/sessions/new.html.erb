@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-sm p-4" style="max-width: 400px; width: 100%;">
+    <h2 class="text-center mb-4">Login to Mini-Spotify</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "needs-validation", novalidate: true }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, class: 'form-label' %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'form-label' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password', required: true %>
+      </div>
+
+      <div class="form-group form-check">
+        <%= f.check_box :remember_me, class: 'form-check-input' %>
+        <%= f.label :remember_me, class: 'form-check-label' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Login", class: 'btn btn-primary btn-block' %>
+      </div>
+
+      <div class="text-center mt-3">
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "small" %>
+      </div>
+
+    <% end %>
+
+    <div class="text-center mt-3">
+      <p>Don't have an account? <%= link_to 'Sign Up', new_registration_path(resource_name) %></p>
+    </div>
+  </div>
+</div>
