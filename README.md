@@ -1,4 +1,4 @@
-# 🎵 Mini-Spotify — Lightweight Music Streaming MVP
+# 🎵 Mini-Spotify — Lightweight Music Streaming
 
 **Mini-Spotify** is a minimalist, Spotify-style music streaming MVP built with **Ruby on Rails** and **Bootstrap 5**. It allows users to upload, organize, and stream music through a clean and responsive web interface.
 
