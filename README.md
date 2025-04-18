@@ -1,24 +1,67 @@
-# README
+# 🎵 Mini-Spotify — Lightweight Music Streaming MVP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Mini-Spotify** is a minimalist, Spotify-style music streaming MVP built with **Ruby on Rails** and **Bootstrap 5**. It allows users to upload, organize, and stream music through a clean and responsive web interface.
 
-Things you may want to cover:
+> 🎧 Stream tracks, build playlists, and manage your music — all in a simplified Spotify clone.
 
-* Ruby version
+---
 
-* System dependencies
+## 🚀 Features
 
-* Configuration
+- 🎶 Upload and stream audio tracks (MP3, WAV, etc.)
+- 💿 Create albums and assign tracks
+- 🖼️ Upload album artwork and audio with Active Storage
+- 📜 Create playlists and manage track collections
+- 👤 User authentication (Devise)
+- 🧠 Modular and scalable architecture
+- 💻 Built with Bootstrap 5 for sleek, responsive UI
 
-* Database creation
+---
 
-* Database initialization
+## 🖼️ Screenshots
 
-* How to run the test suite
+> Add screenshots here of playlists, track player, album pages, etc.
 
-* Services (job queues, cache servers, search engines, etc.)
+---
 
-* Deployment instructions
+## 🛠️ Tech Stack
 
-* ...
+| Category       | Technology                  |
+|----------------|-----------------------------|
+| Backend        | Ruby on Rails 7             |
+| Database       | PostgreSQL                  |
+| Auth           | Devise                      |
+| File Uploads   | Active Storage (local/cloud)|
+| UI Framework   | Bootstrap 5                 |
+| Audio Player   | HTML5 Audio Tag             |
+
+---
+
+## ⚙️ Getting Started
+
+### 🧾 Prerequisites
+
+- Ruby 3.2+
+- Rails 7+
+- PostgreSQL
+- Yarn & Node.js
+
+### 💻 Setup Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mini-spotify.git
+cd mini-spotify
+
+# Install gems
+bundle install
+
+# Setup DB
+rails db:create db:migrate
+
+# Install Active Storage (if not already)
+rails active_storage:install
+rails db:migrate
+
+# Start the server
+rails server
