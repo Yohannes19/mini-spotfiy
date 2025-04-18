@@ -20,7 +20,7 @@
 
 ## 🖼️ Screenshots
 
-> Add screenshots here of playlists, track player, album pages, etc.
+![alt text](image.png)
 
 ---
 
