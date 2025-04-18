@@ -1,0 +1,12 @@
+<h1>Artists</h1>
+
+<%= link_to 'New Artist', new_artist_path, class: "btn btn-primary mb-3" %>
+
+<div class="list-group">
+  <% @artists.each do |artist| %>
+    <a href="<%= artist_path(artist) %>" class="list-group-item list-group-item-action">
+      <strong><%= artist.name %></strong><br>
+      <small><%= truncate(artist.bio, length: 100) %></small>
+    </a>
+  <% end %>
+</div>

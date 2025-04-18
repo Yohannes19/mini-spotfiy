@@ -1,0 +1,17 @@
+<h1><%= @playlist.title %></h1>
+
+<h4>Tracks in this playlist:</h4>
+<ul>
+  <% @playlist.tracks.each do |track| %>
+    <li>
+      <%= track.title %>
+      <%= link_to 'Remove', remove_track_playlist_path(@playlist, track_id: track.id), method: :delete, class: 'btn btn-sm btn-danger' %>
+    </li>
+  <% end %>
+</ul>
+
+<h4 class="mt-4">Add more tracks:</h4>
+<%= form_with url: add_track_playlist_path(@playlist), method: :post, local: true do %>
+  <%= select_tag :track_id, options_from_collection_for_select(@tracks, :id, :title), class: 'form-select' %>
+  <%= submit_tag 'Add to Playlist', class: 'btn btn-primary mt-2' %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Albums</h1>
+
+<%= link_to 'New Album', new_album_path, class: "btn btn-primary mb-3" %>
+
+<div class="list-group">
+  <% @albums.each do |album| %>
+    <a href="<%= album_path(album) %>" class="list-group-item list-group-item-action">
+      <strong><%= album.title %></strong><br>
+      <small><%= truncate(album.artist.name, length: 100) %></small>
+    </a>
+  <% end %>
+</div>

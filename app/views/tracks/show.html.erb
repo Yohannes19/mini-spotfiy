@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @track %>
+<% if @track.audio_file.attached? %>
+  <audio controls class="w-100 mt-3">
+    <source src="<%= url_for(@track.audio_file) %>" type="<%= @track.audio_file.content_type %>">
+    Your browser does not support the audio element.
+  </audio>
+<% end %>
+
+<div>
+  <%= link_to "Edit this track", edit_track_path(@track) %> |
+  <%= link_to "Back to tracks", tracks_path %>
+
+  <%= button_to "Destroy this track", @track, method: :delete %>
+</div>
