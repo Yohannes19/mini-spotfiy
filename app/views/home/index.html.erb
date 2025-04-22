@@ -1,0 +1,14 @@
+<div class="hero-section text-center">
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold mb-4">Your Music, Your Vibe 🎶</h1>
+    <p class="lead mb-4">Create playlists, stream tracks, and feel the groove — all in one lightweight app.</p>
+
+    <% if user_signed_in? %>
+      <%= link_to "Go to Dashboard", playlists_path, class: "btn btn-gradient btn-lg" %>
+    <% else %>
+      <%= link_to "Get Started", new_user_registration_path, class: "btn btn-gradient btn-lg" %>
+    <% end %>
+  </div>    
+</div>
+
+

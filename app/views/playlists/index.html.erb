@@ -1,12 +1,28 @@
-<h1>My Playlists</h1>
+<div class="container section">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">Your Playlists</h2>
+    <%= link_to '➕ New Playlist', new_playlist_path, class: "btn btn-gradient" %>
+  </div>
 
-<%= link_to 'New Playlist', new_playlist_path, class: "btn btn-primary mb-3" %>
+  <% if @playlists.any? %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <% @playlists.each do |playlist| %>
+        <div class="col">
+          <div class="glass-card h-100 d-flex flex-column justify-content-between">
+            <% if playlist.cover_image.attached? %>
+              <%= image_tag playlist.cover_image.variant(resize_to_fill: [400, 200]), class: "img-fluid rounded mb-3" %>
+            <% else %>
+              <div class="bg-secondary text-white text-center py-5 mb-3 rounded">No Cover</div>
+            <% end %>
 
-<ul class="list-group">
-  <% @playlists.each do |playlist| %>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <%= link_to playlist.title, playlist_path(playlist) %>
-      <%= link_to 'Edit', edit_playlist_path(playlist), class: "btn btn-sm btn-outline-secondary" %>
-    </li>
+            <h5><%= playlist.title %></h5>
+
+            <%= link_to 'View Playlist ▶️', playlist_path(playlist), class: "btn btn-sm btn-outline-light mt-3" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-muted">No playlists yet. Let’s create one!</p>
   <% end %>
-</ul>
+</div>

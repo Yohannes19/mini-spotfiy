@@ -5,6 +5,10 @@
     <%= form.label :title %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
+  <div class="mb-3">
+    <%= form.label :Cover_Image %>
+   <%= form.file_field :cover_image, class: "form-control mt-2" %>
+  </div>
 
   <%= form.submit 'Create Playlist', class: "btn btn-primary" %>
 <% end %>

@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #0c6137;
+  --accent-color: #F67280;
+  --bg-color: #b4ee7a;
+  --text-color: #0e140f;
+  --muted-text: #A0A0B0;
+  --card-bg: rgba(255, 255, 255, 0.06);
+}
+
+body {
+  background-color: #A0A0B0;
+  color: var(--text-color);
+
+}
+
+ .btn-link {
+  color: var(--primary-color);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.85;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+  color: var(--text-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar {
+  background: var(--bg-color);
+  
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  
+  .navbar-brand {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+  }
+
+  .nav-link {
+    color: var(--text-color);
+    transition: all 0.2s ease;
+   
+  }
+
+  .btn-gradient {
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+}
+
+
+

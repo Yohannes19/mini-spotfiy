@@ -25,14 +25,23 @@ class PlaylistsController < ApplicationController
   
     def add_track
       track = Track.find(params[:track_id])
-      @playlist.tracks << track unless @playlist.tracks.include?(track)
-      redirect_to @playlist
+      if @playlist.tracks.include?(track)
+        redirect_to @playlist, alert: 'Track already in playlist.'
+      else  
+        @playlist.tracks << track 
+        redirect_to @playlist, notice: 'Track added to playlist.'
+      end
     end
+
   
     def remove_track
       track = Track.find(params[:track_id])
-      @playlist.tracks.destroy(track)
-      redirect_to @playlist
+      if @playlist.tracks.include?(track)
+         @playlist.tracks.destroy(track)
+         redirect_to @playlist, notice: 'Track removed from playlist.'
+      else
+          redirect_to @playlist, alert: 'Track not found in playlist.'
+      end 
     end
   
     private
